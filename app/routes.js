@@ -5,12 +5,12 @@ const router = express.Router()
 
 router.get('/conditionalres', function (req, res) {
   var analyseChoice = req.session.data['analyseChoice']
-  var referOutcome = req.session.data['referoutcome']
+  var brandingOutcome = req.session.data['brandingoutcome']
 
-  if (analyseChoice === 'Refer') {
-    if (analyseChoice === 'Refer' && referOutcome === 'branded') {
+  if (analyseChoice === 'Branding') {
+    if (analyseChoice === 'Branding' && brandingOutcome === 'branded') {
       res.redirect('branded')
-    } else if (analyseChoice === 'Refer' && referOutcome === 'unbranded') {
+    } else if (analyseChoice === 'Branding' && brandingOutcome === 'unbranded') {
       res.redirect('unbranded')
     }
   } else if (analyseChoice === 'image') {

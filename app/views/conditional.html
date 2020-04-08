@@ -19,37 +19,38 @@ GOV.UK Prototype Kit
 
 
 
-            {% set referHtml %}
+            {% set brandHtml %}
             {{ govukRadios({
-            classes: "govuk-radios--inline",
-            idPrefix: "referOutcome",
-            name: "referoutcome",
-            fieldset: {
-            legend: {
-            text: "Select layout to navigate to:",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-            }
-            },
+              classes: "govuk-radios--inline",
+              idPrefix: "brandingOutcome",
+              name: "brandingoutcome",
+              fieldset: {
+                legend: {
+                  text: "Select layout to navigate to:",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
             items: [
             {
-            value: "exam",
-            text: "Branded layout"
+              value: "branded",
+              text: "Branded layout"
             },
             {
-            value: "release",
-            text: "Unbranded layout"
+              value: "unbranded",
+              text: "Unbranded layout"
             }
             ]
             }) }}
             {{ govukTextarea({
-            name: "referreason",
-            id: "referReason",
-            label: {
-            text: "Add comments"
+              name: "referreason",
+              id: "referReason",
+              label: {
+              text: "Add comments"
             }
             }) }}
             {% endset -%}
+
 
             {{ govukRadios({
             idPrefix: "chooseAction",
@@ -71,10 +72,10 @@ GOV.UK Prototype Kit
             text: "Image"
             },
             {
-            value: "Refer",
+            value: "Branding",
             text: "Select Branded or Unbranded",
             conditional: {
-            html: referHtml
+            html: brandHtml
             }
             }
             ]
