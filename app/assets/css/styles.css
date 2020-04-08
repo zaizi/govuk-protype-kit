@@ -1,0 +1,326 @@
+#annotateButton, #contrastButton, #DensityButton, #measureButton, #NegativeButton, #zoomButton, #reloadButton {
+    background-color: #1d70b8;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.buttonDisabled {
+    background-color: grey !important;
+    cursor: default !important;
+}
+
+#controls {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    padding: 20px 10px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: -40px !important;
+}
+
+.imageContainer, .canvasContainer, .zoomContainer {
+    position: relative;
+    width: 1024px;
+    height: 503px;
+}
+
+.showCanvas {
+    display: block !important;
+}
+
+.hideCanvas {
+    display: none !important;
+}
+
+.showImage {
+    display: block !important;
+}
+
+.hideImage {
+    display: none !important;
+}
+
+.newline {
+    display: block;
+}
+
+/**** measure ****/
+div.line {
+    transform-origin: 0 100%;
+    height: 3px;
+    /* Line width of 3 */
+    background: #1d70b8;
+}
+
+div.line .tooltiptext {
+    background-color: #1d70b8;
+    color: #fff;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    width: 70px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    margin-bottom: 5px;
+}
+
+div.line .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1d70b8 transparent transparent transparent;
+}
+
+div.transforming-on-corner {
+    transform-origin: 0% 0%;
+}
+
+/******/
+
+/*** zoom ****/
+#img-container {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+}
+
+#zoomImage {
+    max-width: 100%;
+    height: auto;
+}
+
+/******/
+
+/*** zoom ****/
+/*.sa-inset-text {
+    border-width: 0px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 231px;
+    height: 97px;
+    background: inherit;
+    background-color: inherit;
+    background-color: rgba(242, 242, 242, 1);
+    box-sizing: border-box;
+    border-width: 4px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}*/
+
+.sa-primary {
+    border-left: 5px solid rgba(0, 94, 165, 1) !important;
+
+    /*    border-color: rgba(0, 94, 165, 1);
+        border-top-color: rgb(0, 94, 165);
+        border-right-color: rgb(0, 94, 165);
+        border-bottom-color: rgb(0, 94, 165);*/
+}
+
+.sa-secondary {
+    border-left: 5px solid rgba(255, 204, 0, 1) !important;
+
+    /*    border-color: rgba(255, 204, 0, 1);
+        border-top-color: rgb(255, 204, 0);
+        border-right-color: rgb(255, 204, 0);
+        border-bottom-color: rgb(255, 204, 0);*/
+}
+
+.sa-inset-text {
+    background-color: rgba(242, 242, 242, 1);
+    width: 254px !important;
+    min-height: 80px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.sa-inset-text a:link,
+.sa-inset-text a:visited,
+.sa-inset-text a:hover,
+.sa-inset-text a:active {
+    color: rgba(0, 94, 165, 1);
+}
+
+a.h3link:link,
+a.h3link:visited,
+a.h3link:hover,
+a.h3link:active {
+    font-weight: bold;
+    color: rgba(0, 94, 165, 1);
+}
+
+.clickable-row {
+    cursor: pointer;
+    background-color: #f3f2f1;
+    border-color: unset !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.clickable-row:hover {
+    background-color: #b1b4b6;
+}
+
+.sa-table__cell {
+    border-bottom: 0px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 5px !important;
+    border-color: white !important;
+    border-top: 10px !important;
+}
+
+.sa-table {
+    border-collapse: separate;
+    border-spacing: 0 7px !important;
+}
+
+.sa-table-search {
+    font-size: 1rem !important;
+}
+
+.sa-checkboxes__item-search{
+    float: unset !important;
+    display: inline-block !important;
+}
+
+.sa-table__header {
+    font-weight: 500 !important;
+    border-bottom: 0px !important;
+}
+
+.sa-select {
+    min-width: 40% !important;
+}
+
+.sa-select30 {
+    min-width: 30% !important;
+}
+
+.sa-textarea {
+    width: 40% !important;
+}
+
+.sa-file-upload {
+    border: 2px solid;
+}
+
+.sa-tag--grey {
+    text-transform: none;
+    color: black;
+}
+
+.sa-tag-normal {
+    font-weight: normal !important;
+}
+
+. sa-heading-s {
+    display: inline-block !important;
+}
+
+.sa-sort {
+    width: 12px;
+    height: 9px;
+    background: url("/public/images/downarrow.png");
+    display: inline-block;
+    margin-left: 7px;
+}
+
+/*.sa-radios__input {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+}
+
+.sa-radios__label::before {
+}*/
+
+.border-grey {
+    margin-bottom: 0;
+    padding: 30px 20px;
+    border: 1px solid #b1b4b6;
+}
+
+.noborder {
+    border: 0;
+}
+
+.nothing {
+    border: 0;
+    outline: none;
+}
+
+.same-line {
+    display: inline;
+}
+
+.same-line-block {
+    display: inline-block !important;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.left {
+    float: left;
+    text-align: left;
+}
+
+.valign {
+    vertical-align: top;
+}
+
+.valign-bottom {
+    vertical-align: bottom;
+}
+
+.leftpad-20 {
+    padding-left: 20px;
+}
+
+.quotes {
+    font-style: italic;
+    color: #404040;
+}
+
+.imgsquare {
+    width: 430px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/******/

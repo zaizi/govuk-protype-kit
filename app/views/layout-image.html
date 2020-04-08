@@ -30,94 +30,118 @@
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+{% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container",
-    navigation: [
-    {
-      href: "/home.html",
-      text: "Home",
-      attributes: {
-      "data-install": "Home"
-    }
-    },
-    {
-    href: "/conditional.html",
-    text: "Conditional navigation",
-    attributes: {
-    "data-tutorials": "Conditional navigation"
-    }
-    },
-    {
-    href: "/examine.html",
-    text: "Examine",
-    attributes: {
-    "data-tutorials": "Examine"
-    }
-    },
-    {
-    href: "/review-queue.html",
-    text: "Review",
-    attributes: {
-    "data-tutorials": "Review"
-    }
-    },
-    {
-    href: "/findcase.html",
-    text: "Find a case",
-    attributes: {
-    "data-about": "Find a case"
-    }
-    },
-    {
-    href: "/mi-reporting.html",
-    text: "MI reporting",
-    attributes: {
-    "data-install": "MI reporting"
-    }
-    }
-    ],
-    html: "sign out"
-  }) }}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+containerClasses: "govuk-width-container",
+navigation: [
+{
+href: "/home.html",
+text: "Home",
+attributes: {
+"data-install": "Home"
+}
+},
+{
+href: "/conditional.html",
+text: "Conditional navigation",
+attributes: {
+"data-tutorials": "Conditional navigation"
+}
+},
+{
+href: "/examine.html",
+text: "Examine",
+attributes: {
+"data-tutorials": "Examine"
+}
+},
+{
+href: "/review-queue.html",
+text: "Review",
+attributes: {
+"data-tutorials": "Review"
+}
+},
+{
+href: "/findcase.html",
+text: "Find a case",
+attributes: {
+"data-about": "Find a case"
+}
+},
+{
+href: "/mi-reporting.html",
+text: "MI reporting",
+attributes: {
+"data-install": "MI reporting"
+}
+}
+],
+html: "sign out"
+}) }}
+<div class="govuk-width-container">
+    {% include "includes/subhead.html" %}
+    <div style="clear:left;">
+        {{ govukBackLink({
+        text: "Back",
+        href: "javascript: history.back();"
+        }) }}
+    </div>
+    <h1 class="govuk-heading-l">
+        Layout with image and conditional form
+    </h1>
+
+</div>
+<!--  <img src="/public/images/xray1.png"style="width:100%;margin-bottom:-50px;" alt="" />-->
+<div class="govuk-width-container">
+    <br>
+
+    <div class="imageContainer" id="imageContainer" style="">
+        <img src="/public/images/cybersecurityservices3.png"
+             width="960px" height="638px" id="scanImage" class=""/>
+    </div>
+    <br/>
+
+</div>
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
+{% block footer %}
+{{ govukFooter({
+meta: {
+items: [
+{
+href: "https://govuk-prototype-kit.herokuapp.com/",
+text: "GOV.UK Prototype Kit " + releaseVersion
+},
+{
+href: "/prototype-admin/clear-data",
+text: "Clear data"
+}
+]
+}
+}) }}
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

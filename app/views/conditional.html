@@ -1,0 +1,92 @@
+{% extends "layout-image.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <br/><br/><br/><br/><br/>
+        <form action="search" method="post">
+
+            <h2 class="govuk-heading-m">Description</h2>
+
+            <p>Description here</p>
+
+            <h2 class="govuk-heading-m">Selection comments</h2>
+
+
+
+
+            {% set referHtml %}
+            {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "referOutcome",
+            name: "referoutcome",
+            fieldset: {
+            legend: {
+            text: "Refer cargo for:",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+            }
+            },
+            items: [
+            {
+            value: "exam",
+            text: "Examination"
+            },
+            {
+            value: "release",
+            text: "Release"
+            }
+            ]
+            }) }}
+            {{ govukTextarea({
+            name: "referreason",
+            id: "referReason",
+            label: {
+            text: "Reason for referral outcome"
+            }
+            }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+            idPrefix: "chooseAction",
+            name: "analyseChoice",
+            fieldset: {
+            legend: {
+            text: "Choose an action",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+            }
+            },
+            items: [
+            {
+            value: "Compare",
+            text: "Compare to previous scans"
+            },
+            {
+            value: "Review",
+            text: "Request a second opinion"
+            },
+            {
+            value: "Refer",
+            text: "Refer for examination or release",
+            conditional: {
+            html: referHtml
+            }
+            }
+            ]
+            }) }}
+
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

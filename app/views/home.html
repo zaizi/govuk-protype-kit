@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <form action="report-scanner" method="post">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Select, scan and examine maritime freight
+            </h1>
+        </div>
+        <div class="govuk-grid-column-full">
+            <div class="primary-row">
+                <div class="govuk-inset-text sa-inset-text sa-primary">
+                    <h3><a href="scanlist.html">Begin scanning</a></h3>
+                    6 upcoming targets
+                </div>
+                <div class="govuk-inset-text sa-inset-text sa-primary">
+                    <h3><a href="examine.html">Examination queue</a></h3>
+                    2 scans awaiting examination
+                </div>
+                <div class="govuk-inset-text sa-inset-text sa-primary">
+                    <h3><a href="review-queue.html">Review queue</a></h3>
+                    2 cases for review
+                </div>
+            </div>
+            {{ govukButton({
+            text: "Report scanner offline",
+            classes: "govuk-button--secondary"
+            }) }}
+
+            <div class="secondary-row">
+                <div class="govuk-inset-text sa-inset-text sa-secondary">
+                    <h3><a href="findcase.html">Find a case</a></h3>
+                    Find cases by certain criteria
+                </div>
+                <div class="govuk-inset-text sa-inset-text sa-secondary">
+                    <h3><a href="mi-reporting.html">MI reporting</a></h3>
+                    Generate reports for a specific port or country-wide
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
