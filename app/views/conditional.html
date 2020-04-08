@@ -8,13 +8,13 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <br/><br/><br/><br/><br/>
-        <form action="search" method="post">
+        <form action="conditionalres" method="post">
 
             <h2 class="govuk-heading-m">Description</h2>
 
             <p>Description here</p>
 
-            <h2 class="govuk-heading-m">Selection comments</h2>
+            <h2 class="govuk-heading-m">Selection and comments</h2>
 
 
 
@@ -26,7 +26,7 @@ GOV.UK Prototype Kit
             name: "referoutcome",
             fieldset: {
             legend: {
-            text: "Refer cargo for:",
+            text: "Select layout to navigate to:",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
             }
@@ -34,11 +34,11 @@ GOV.UK Prototype Kit
             items: [
             {
             value: "exam",
-            text: "Examination"
+            text: "Branded layout"
             },
             {
             value: "release",
-            text: "Release"
+            text: "Unbranded layout"
             }
             ]
             }) }}
@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
             name: "referreason",
             id: "referReason",
             label: {
-            text: "Reason for referral outcome"
+            text: "Add comments"
             }
             }) }}
             {% endset -%}
@@ -63,16 +63,16 @@ GOV.UK Prototype Kit
             },
             items: [
             {
-            value: "Compare",
-            text: "Compare to previous scans"
+            value: "home",
+            text: "Go to Home"
             },
             {
-            value: "Review",
-            text: "Request a second opinion"
+            value: "image",
+            text: "Image"
             },
             {
             value: "Refer",
-            text: "Refer for examination or release",
+            text: "Select Branded or Unbranded",
             conditional: {
             html: referHtml
             }
